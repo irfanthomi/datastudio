@@ -25,6 +25,7 @@ const Studio = () => {
                     if (obj.item === url) {
                         setLink(obj.url)
                     }
+                    return true
                 }
                 )
             }
