@@ -5,6 +5,7 @@ import { removeLocalStorage } from '../../helper/auth';
 import { NavLink, useNavigate } from "react-router-dom";
 import logo from "../../assets/img/logo-header.png";
 import { List } from '../Menu/List';
+import { FaAngleDown } from 'react-icons/fa';
 function Navbar(props: any) {
     const nav = useNavigate();
     const [menu, setMenu] = useState(false);
@@ -57,16 +58,19 @@ function Navbar(props: any) {
                             if (item.sub) {
                                 return (
                                     <li key={index} className=' hover:h-full h-10 overflow-hidden'>
-                                        <NavLink className="flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-gray-300" to={item.link}   >
-                                            <span className="ml-3">{item.icon}</span>
-                                            <span className="ml-3">{item.name}</span>
-                                        </NavLink>
-                                        <ul className=" pl-10">
+                                        <div className="flex justify-between items-center px-4 py-2 text-base font-normal  text-white hover:bg-[#3838380f]"    >
+                                            <div className='flex'>
+                                                <span className="ml-3">{item.icon}</span>
+                                                <span className="ml-3">{item.name}</span>
+                                            </div>
+                                            <span className="ml-3"><FaAngleDown /></span>
+                                        </div>
+                                        <ul className="  pl-10">
                                             {
                                                 item.sub.map((sub, index) => {
                                                     return (
                                                         <li key={index} >
-                                                            <NavLink to={sub.link} className=" px-4 py-2 flex   text-white  items-center  hover:bg-gray-300" >
+                                                            <NavLink to={sub.link} className=" px-4 py-2 flex   text-white  items-center  hover:bg-[#3838380f]" >
                                                                 <span className="ml-3">{sub.name}</span>
                                                             </NavLink>
                                                         </li>
@@ -79,7 +83,7 @@ function Navbar(props: any) {
                             } else {
                                 return (
                                     <li key={index}>
-                                        <NavLink className={({ isActive }) => isActive ? "flex sideActive items-center px-4 py-2 text-base font-normal  text-white" : "flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-gray-300"} to={item.link}   >
+                                        <NavLink className={({ isActive }) => isActive ? "flex sideActive items-center px-4 py-2 text-base font-normal  text-white" : "flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-[#3838380f]"} to={item.link}   >
                                             <span className="ml-3">{item.icon}</span>
                                             <span className="ml-3">{item.name}</span>
                                         </NavLink>

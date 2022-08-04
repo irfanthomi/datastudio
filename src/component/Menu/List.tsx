@@ -43,18 +43,19 @@ export const List = [
         url: "",
         sub: [
             {
-                name: "Formulir",
+                name: "Formulir Minat",
                 link: "/studio/formulir",
                 icon: <FaDoorOpen />,
                 item: "formulir",
-                url: "https://datastudio.google.com/embed/reporting/4cc29abd-2923-441d-8e88-f0a4bbbb0bac/page/5NhtC"
+                url: "https://datastudio.google.com/embed/reporting/1de8efda-91ea-45e5-8250-866c0e102aea/page/OHhtC"
             },
             {
-                name: "Mahasiswa",
+                name: "Form PMB",
                 link: "/studio/mhs",
                 icon: <FaDoorOpen />,
                 item: "mhs",
-                url: "https://datastudio.google.com/embed/reporting/ffd9e04a-401d-40b6-bc8b-db4a355f1cf5/page/FmQsC"
+                url: "https://datastudio.google.com/embed/reporting/4cc29abd-2923-441d-8e88-f0a4bbbb0bac/page/5NhtC"
+
             },
         ]
     },
