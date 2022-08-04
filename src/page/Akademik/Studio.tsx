@@ -16,9 +16,17 @@ const Studio = () => {
     }, [url])
 
     const getLink = () => {
-        List.filter((item) => {
-            if (item.item === url) {
-                setLink(item.url)
+        console.log(url)
+        List.filter((obj) => {
+            if (obj.item === url) {
+                setLink(obj.url)
+            } else if (obj.sub) {
+                obj.sub.filter((obj) => {
+                    if (obj.item === url) {
+                        setLink(obj.url)
+                    }
+                }
+                )
             }
             return true
         })

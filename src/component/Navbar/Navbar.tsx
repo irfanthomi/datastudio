@@ -54,15 +54,41 @@ function Navbar(props: any) {
                 <div ref={navRef} className=" hidden md:block transition-all shadow shadow-gray-500  duration-1000     md:col-span-2 md:relative md:top-0  absolute  bg-yellow-500  ">
                     <ul className=" mt-2">
                         {List.map((item, index) => {
-                            return (
-                                <li key={index}>
+                            if (item.sub) {
+                                return (
+                                    <li key={index} className=' hover:h-full h-10 overflow-hidden'>
+                                        <NavLink className="flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-gray-300" to={item.link}   >
+                                            <span className="ml-3">{item.icon}</span>
+                                            <span className="ml-3">{item.name}</span>
+                                        </NavLink>
+                                        <ul className=" pl-10">
+                                            {
+                                                item.sub.map((sub, index) => {
+                                                    return (
+                                                        <li key={index} >
+                                                            <NavLink to={sub.link} className=" px-4 py-2 flex   text-white  items-center  hover:bg-gray-300" >
+                                                                <span className="ml-3">{sub.name}</span>
+                                                            </NavLink>
+                                                        </li>
+                                                    )
+                                                })
+                                            }
+                                        </ul>
+                                    </li>
+                                );
+                            } else {
+                                return (
+                                    <li key={index}>
+                                        <NavLink className={({ isActive }) => isActive ? "flex sideActive items-center px-4 py-2 text-base font-normal  text-white" : "flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-gray-300"} to={item.link}   >
+                                            <span className="ml-3">{item.icon}</span>
+                                            <span className="ml-3">{item.name}</span>
+                                        </NavLink>
+                                    </li>
 
-                                    <NavLink className={({ isActive }) => isActive ? "flex sideActive items-center px-4 py-2 text-base font-normal  text-white" : "flex items-center px-4 py-2 text-base font-normal  text-white hover:bg-gray-300"} to={item.link}   >
-                                        <span className="ml-3">{item.icon}</span>
-                                        <span className="ml-3">{item.name}</span>
-                                    </NavLink>
-                                </li>
-                            );
+
+                                );
+                            }
+
                         })}
 
                     </ul>

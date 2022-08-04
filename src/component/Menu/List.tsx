@@ -36,10 +36,34 @@ export const List = [
         url: "https://datastudio.google.com/embed/reporting/87d8b8bb-b9c9-4e60-9fdb-7a0daa1f5611/page/s23rC"
     },
     {
+        name: "PMB",
+        link: "",
+        icon: <FaDoorOpen />,
+        item: "",
+        url: "",
+        sub: [
+            {
+                name: "Formulir",
+                link: "/studio/formulir",
+                icon: <FaDoorOpen />,
+                item: "formulir",
+                url: "https://datastudio.google.com/embed/reporting/4cc29abd-2923-441d-8e88-f0a4bbbb0bac/page/5NhtC"
+            },
+            {
+                name: "Mahasiswa",
+                link: "/studio/mhs",
+                icon: <FaDoorOpen />,
+                item: "mhs",
+                url: "https://datastudio.google.com/embed/reporting/ffd9e04a-401d-40b6-bc8b-db4a355f1cf5/page/FmQsC"
+            },
+        ]
+    },
+    {
         name: "Pembayaran SPP",
         link: "/studio/SPP",
         icon: <FaDoorOpen />,
         item: "SPP",
         url: "https://datastudio.google.com/embed/reporting/1f739fc8-19dc-4d6e-a0bf-bcfbe0370e57/page/xTMuC"
     },
+
 ];
